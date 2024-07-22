@@ -14,7 +14,7 @@ pip3 install -r ./requirements.txt
 Before you can start GUI of this app, you need to start a background processes. There are two of them to start and you need to start them in separate terminal windows. 
 
 ```
-bash ./start_socketio.dispatcher.sh
+bash ./start_socketio_dispatcher.sh
 ```
 
 ```
