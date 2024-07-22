@@ -1,0 +1,9 @@
+redis:
+  host: localhost
+  port: 6379
+  db: 0
+
+socketio:
+  host: 127.0.0.1
+  port: 10013
+  secret: secret

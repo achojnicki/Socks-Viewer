@@ -1,0 +1,8 @@
+redis
+flask
+flask-socketio
+python-socketio
+requests
+websocket-client
+wxpython
+

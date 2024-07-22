@@ -1,0 +1,8 @@
+redis:
+  host: localhost
+  port: 6379
+  db: 0
+
+socks:
+  host: 127.0.0.1
+  port: 8080
