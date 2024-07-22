@@ -25,14 +25,14 @@ class Connections_Page(wx.Panel):
 
         self._metrics_list=wx.ListCtrl(self, id=wx.ID_ANY, style=wx.LC_REPORT|wx.LC_SINGLE_SEL)
         self._metrics_list.InsertColumn(0, "Connection Status", width=180)
-        self._metrics_list.InsertColumn(1, "Local Address", width=300)
+        self._metrics_list.InsertColumn(1, "Local Address", width=150)
         self._metrics_list.InsertColumn(2, "Local Port", width=90)
         self._metrics_list.InsertColumn(3, "Remote Addr", width=180)
-        self._metrics_list.InsertColumn(4, "Remote Addr Domain", width=250)
+        self._metrics_list.InsertColumn(4, "Remote Addr Domain", width=300)
         self._metrics_list.InsertColumn(5, "Remote Port", width=90)
 
 
-        self._geoip_textctrl=wx.TextCtrl(self, style= wx.TE_MULTILINE | wx.SUNKEN_BORDER)
+        self._geoip_textctrl=wx.TextCtrl(self, style= wx.TE_MULTILINE | wx.SUNKEN_BORDER | wx.TE_READONLY)
 
 
 
@@ -65,7 +65,6 @@ class Connections_Page(wx.Panel):
         self.Bind(wx.EVT_LIST_COL_BEGIN_DRAG, self._veto_event, self._hosts_list)
         self.Bind(wx.EVT_LIST_COL_BEGIN_DRAG, self._veto_event, self._metrics_list)
 
-        #self._frame._on_load.append(self._do_propagate_pixel_trackers)
 
 
     def _veto_event(self, event):
@@ -76,8 +75,6 @@ class Connections_Page(wx.Panel):
         self.Update()
 
     def _do_update_geoip(self, event=None):
-
-
         indexes=list(self._hosts.keys())
         remote_addr=indexes[self._hosts_list.GetFocusedItem()]
 
@@ -178,7 +175,6 @@ class Connections_Page(wx.Panel):
             wx.CallAfter(self._metrics_list.SetItemBackgroundColour, self._connections_uuid_mapping[connection_uuid], wx.Colour(0,150,0))
         
         if connection_uuid in self._hosts_uuid_mapping:
-            print(self._hosts_uuid_mapping[connection_uuid])
             wx.CallAfter(self._hosts_list.SetItemBackgroundColour, self._hosts_uuid_mapping[connection_uuid], wx.Colour(0,150,0))
 
         wx.CallAfter(self.Layout)
@@ -196,7 +192,6 @@ class Connections_Page(wx.Panel):
         wx.CallAfter(self.Update)
 
     def add_connection(self, connection):
-        #print(connection)
         changed=False
 
 
