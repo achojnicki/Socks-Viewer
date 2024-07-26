@@ -28,7 +28,7 @@ To start gui simply use the BASH startup script
 bash ./start_gui.sh
 ```
 
-You may need to change the configuration of the application. All configuration is based in config files based in configs directory. In default scenario socket server is listening on localhost at port 8080,  socketio dispatcher is listening on localhost at port 10013.
+You may need to change the configuration of the application. All configuration is based in config files present in configs directory. In the default scenario socket server is listening on localhost at port 8080, socketio dispatcher is listening on localhost at port 10013.
 
 Application allows to use the socks_server and socketio_dispatcher on separate machines than the gui. To achieve this approach you need to make sure that the socketio_dispatcher being accessable from the network(listening on the IP address instead of localhost and allowing traffic on the system firewall) and have matching pair of host and port in the socketio entry in the config files.
 
