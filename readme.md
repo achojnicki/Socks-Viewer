@@ -32,4 +32,4 @@ You may need to change the configuration of the application. All configuration i
 
 Application allows to use the socks_server and socketio_dispatcher on separate machines than the gui. To achieve this approach you need to make sure that the socketio_dispatcher being accessable from the network(listening on the IP address instead of localhost and allowing traffic on the system firewall) and have matching pair of host and port in the socketio entry in the config files.
 
-Applications (socks_server and a socketio_dispather) do require an instance of a Redis server running on the machine to be able to runs.
+Applications (socks_server and a socketio_dispather) do require an instance of a Redis server running on the machine to be able to run.
